@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1>JEOPARDY</h1>
+          <h1>DAD JOKES!</h1>
         </header>
         <CardList results={this.state.results} />
       </div>

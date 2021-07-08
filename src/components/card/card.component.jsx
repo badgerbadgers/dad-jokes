@@ -32,7 +32,7 @@ class Card extends Component {
         <p
           style={{
             display: this.state.isAnswer ? "block" : "none",
-            color: "#d4d7d8",
+            color: "#00000",
             fontStyle: "italic",
           }}
         >
