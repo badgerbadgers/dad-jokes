@@ -1,45 +1,29 @@
-// import React from 'react';
-
-// import './card.styles.css';
-
-// export const Card = (props) => (
-    
-//     <div className='card-container'>
-//         <p>{props.jokes}</p>
-//         <p>{props.answer}</p>
-//         <button onClick={() => props.handleClick(props)}>Click For Answer</button>
-//         <p>{props.punchline}</p>
-//     </div>
-// )
 import React, { Component } from 'react';
-import './card.styles.css'
+import './card.styles.css';
 
 class Card extends Component {
-  constructor(props){
-    super()
-    this.state ={
+  constructor(props) {
+    super();
+    this.state = {
       props: props,
-    }
+      isAnswer: false
+    };
   }
 
-  render(){
-    return(
-      <div className="card">
-        <p>{this.state.props.joke}</p>
-        <button onClick={() => this.setState({isAnswer: !this.state.isAnswer})} className="cardBtn">
-          {"ANSWER"}
-        </button>
-        <p
-          style={{
-            display: this.state.isAnswer ? "block" : "none",
-            color: "#00000",
-            fontStyle: "italic",
-          }}
-        >
-          {this.state.props.answer}
-        </p>
-      </div>
-    )
-  }
+ render() {
+   return(
+     <div className="Card">
+       <p>{this.state.props.question}</p>
+       <button onClick={()=> {
+         this.setState({isAnswer: !this.state.isAnswer})
+      }}>Answer</button>
+       <p style= {{
+         color: "#fff",
+         display: this.state.isAnswer ? "block" : "none"
+       }}>{this.state.props.answer}</p>
+     </div>
+   )
+ }
 }
+
 export default Card;
